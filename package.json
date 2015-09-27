@@ -1,0 +1,12 @@
+{
+  "title": "New tab right of active",
+  "name": "New-tab-right-of-active",
+  "version": "0.0.1",
+  "description": "Opens new tab righ of active one",
+  "main": "index.js",
+  "author": "Vedran Sajko",
+  "engines": {
+    "firefox": ">=38.0a1"
+  },
+  "license": "MIT"
+}
