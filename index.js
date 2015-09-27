@@ -2,8 +2,8 @@ var buttons = require('sdk/ui/button/action');
 var tabs = require("sdk/tabs");
 
 buttons.ActionButton({
-  id: "mozilla-link",
-  label: "Visit Mozilla",
+  id: "new-right-tab",
+  label: "New Right Tab",
   icon: {
     "16": "./icon-16.png",
     "32": "./icon-32.png",
