@@ -1,10 +1,13 @@
 {
   "title": "New tab right of active",
   "name": "New-tab-right-of-active",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Opens new tab righ of active one",
   "main": "index.js",
   "author": "Vedran Sajko",
+  "permissions": {
+      "multiprocess": true
+  },
   "engines": {
     "firefox": ">=38.0a1"
   },

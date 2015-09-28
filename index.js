@@ -19,9 +19,16 @@ function handleClick() {
         isPinned: false,
         onOpen: function onOpen(tab) {
             tab.index = oldIndex + 1;
+        },
+        onReady: function(tab) {
+            var xulTab = require("sdk/view/core").viewFor(tab);
+            var urlBar = xulTab.ownerDocument.defaultView.document.getElementById('urlbar');
+            urlBar.value = "";
+            urlBar.select();
         }
     });
 }
+
 var { Hotkey } = require("sdk/hotkeys");
 Hotkey({
   combo: "accel-t",
