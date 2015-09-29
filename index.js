@@ -14,23 +14,26 @@ buttons.ActionButton({
 
 function handleClick() {
     var oldIndex = tabs.activeTab.index;
+    var newTabUrl =  "about:newTab";
     tabs.open({
-        url: "about:newTab",
+        url: newTabUrl,
         isPinned: false,
         onOpen: function onOpen(tab) {
             tab.index = oldIndex + 1;
         },
         onReady: function(tab) {
-            var xulTab = require("sdk/view/core").viewFor(tab);
-            var urlBar = xulTab.ownerDocument.defaultView.document.getElementById('urlbar');
-            urlBar.value = "";
-            urlBar.select();
+            if (tab.url ===  "about:newTab") {
+                var xulTab = require("sdk/view/core").viewFor(tab);
+                var urlBar = xulTab.ownerDocument.defaultView.document.getElementById("urlbar");
+                urlBar.value = "";
+                urlBar.select();
+            }
         }
     });
 }
 
 var { Hotkey } = require("sdk/hotkeys");
 Hotkey({
-  combo: "accel-t",
-  onPress: handleClick
+    combo: "accel-t",
+    onPress: handleClick
 });
